@@ -1,0 +1,20 @@
+<html>
+<body>
+hello world
+{% for a in animals%}
+<li>{{a.name}}</li>
+{%endfor%}
+
+<form method = "POST">
+{% csrf_token %}
+{{ cform.as_p }}
+<button type="submit" >
+
+Submit
+</button>
+</form>
+{% for c in clients %}
+{{c.name}}
+{% endfor %}
+</body>
+</html>
