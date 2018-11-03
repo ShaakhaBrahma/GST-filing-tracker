@@ -1,20 +1,22 @@
 <html>
 <body>
-hello world
+<!--hello world
 {% for a in animals%}
 <li>{{a.name}}</li>
-{%endfor%}
+{%endfor%}-->
+   
 
-<form method = "POST">
-{% csrf_token %}
-{{ cform.as_p }}
-<button type="submit" >
-
-Submit
-</button>
+    <form method="POST"> {% csrf_token %}
+<p><label for="id_gstin">Gstin:</label> <input type="text" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
+<p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="20" required="" id="id_name"></p>
+<p><label for="id_phn">Phn:</label> <input type="text" name="phn" maxlength="11" required="" id="id_phn"></p>
+<p><label for="id_usr">Usr:</label> <input type="text" name="usr" maxlength="10" required="" id="id_usr"></p>
+<p><label for="id_passwd">Passwd:</label> <input type="text" name="passwd" maxlength="15" required="" id="id_passwd"></p>
+<p><label for="id_mail">Mail:</label> <input type="text" name="mail" maxlength="15" required="" id="id_mail"></p>
+<p><label for="id_pan">Pan:</label> <input type="text" name="pan" maxlength="15" required="" id="id_pan"></p>
+<button type="submit" value="Client" href="#">Submit</button>
 </form>
-{% for c in clients %}
-{{c.name}}
-{% endfor %}
+    
+
 </body>
 </html>

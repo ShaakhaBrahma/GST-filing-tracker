@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form name="loginForm" method="post" action="mainpage.html">
+<table height="50%" width="50%" bgcolor="#2F4F4F" align="center">
+
+<tr>
+<td colspan=3><center><font size=7><b>Login</b></font></center></td>
+</tr>
+
+<tr>
+<td><font size=5>Username:</td>
+<td><input type="text" size=35 name="userid"></td>
+</tr>
+
+<tr>
+<td><font size=5>Password:</td>
+<td><input type="Password" size=35 name="pwd"></td>
+</tr>
+
+<tr>
+<td ><input type="Reset"></td>
+<td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+</tr>
+
+</table>
+</form>
+<script language="javascript">
+function check(form)
+{
+
+if(form.userid.value == "gaurav" && form.pwd.value == "12345")
+{
+	return true;
+}
+else if(form.userid.value == "srivatsa" && form.pwd.value == "6789")
+{
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+</script>
+
+</body>
+</html>

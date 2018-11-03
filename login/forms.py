@@ -9,4 +9,3 @@ class ClientEntry(ModelForm):
 		model=Client
 		fields='__all__'
 		
-			
