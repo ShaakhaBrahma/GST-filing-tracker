@@ -10,6 +10,13 @@ def homepage(request):
         return render(request, "homepage.html")
     if request.method == "POST":
         return render(request, 'homepage.html')
+def about(request):
+    if request.method=="GET":
+        return render(request, "about.html")
+def login1(request):
+    if request.method=="GET":
+        return render(request, "login1.html")
+
 
 def index(request):
     if request.method=="POST":

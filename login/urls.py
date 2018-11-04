@@ -20,8 +20,8 @@ app_name='login'
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('homepage/', views.homepage, name='homepage'),
-    path('^$', views.homepage)
-
+    path('homepage/about', views.about,),
+    path('homepage/login1', views.login1,),
 
 
 ]
