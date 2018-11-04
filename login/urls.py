@@ -18,7 +18,10 @@ from django.urls import path,include
 from . import views
 app_name='login'
 urlpatterns = [
-    path('index/',views.index,name='index'),
+    path('index/', views.index, name='index'),
+    path('homepage/', views.homepage, name='homepage'),
+    path('^$', views.homepage)
+
 
 
 ]

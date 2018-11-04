@@ -1,9 +1,16 @@
+
 from django.shortcuts import render
 from .models import Client, R1a
 from django.template import RequestContext
-from .forms import ClientEntry
+#from .forms import ClientEntry
 
 # Create your views here.
+def homepage(request):
+    if request.method=="GET":
+        return render(request, "homepage.html")
+    if request.method == "POST":
+        return render(request, 'homepage.html')
+
 def index(request):
     if request.method=="POST":
         request_context = RequestContext(request)
@@ -18,4 +25,5 @@ def index(request):
         return render(request, 'index.html')
     if request.method == "GET":
         return render(request, 'index.html')
-		
+
+
