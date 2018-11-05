@@ -78,6 +78,7 @@ class R2a(models.Model):
     sgst = models.IntegerField()
     cess = models.IntegerField()
     month = models.CharField(max_length=20)
+
 class B3b(models.Model):
     gstin = models.ForeignKey(Client, on_delete=models.CASCADE)
     intypeb3b = models.CharField(max_length=4)

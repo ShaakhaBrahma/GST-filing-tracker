@@ -1,0 +1,283 @@
+<html lang="en-us" class="gr__127_0_0_1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Add r1a | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="login/base.css">
+<link rel="stylesheet" type="text/css" href="login/forms.css">
+<!--<link rel="stylesheet" type="text/css" href="./Add r1a _ Django site admin_files/base.css">
+<link rel="stylesheet" type="text/css" href="./Add r1a _ Django site admin_files/forms.css">-->
+    <h1>{{Client.gstin}}</h1>
+<form  method="post" id="r1a_form" novalidate="">{% csrf_token %}
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-gstin">
+            
+            
+                <div>
+                    
+                    <div class="related-widget-wrapper">
+                        <label class="required" for="id_gstin">Gstin:</label>
+                        <input type="text" name="gstin" class="vTextField" maxlength="15" required="True" id="id_gstin">
+
+                            <div class="related-widget-wrapper">
+  <!--  <select name="gstin" required="" id="id_gstin">
+                    {% for no in allgstin %}
+                    <option>{{Client.gstin}}</option>
+                    {% endfor %}
+                </select>-->
+                        </div>
+
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-gstinb">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_gstinb">Gstinb:</label>
+                        
+                            <input type="text" name="gstinb" class="vTextField" maxlength="15" required="" id="id_gstinb">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-month">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_month">Month:</label>
+                        
+                            <input type="text" name="month" class="vTextField" maxlength="8" required="" id="id_month">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-invoice_no">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_invoice_no">Invoice no:</label>
+                        
+                            <input type="number" name="invoice_no" class="vIntegerField" required="" id="id_invoice_no">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-cust_name">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_cust_name">Cust name:</label>
+                        
+                            <input type="text" name="cust_name" class="vTextField" maxlength="20" required="" id="id_cust_name">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-state_of_supply">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_state_of_supply">State of supply:</label>
+                        
+                            <input type="text" name="state_of_supply" class="vTextField" maxlength="15" required="" id="id_state_of_supply">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div >
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_invoice_date">Invoice date:</label>
+                        
+                            <input type="text" name="invoice_date" class="vDateField" size="10" required="" id="id_invoice_date">
+                        
+                    
+                    
+                <br></div>
+            
+        </div>
+    
+        <div>
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_invoice_value">Invoice value:</label>
+                        
+                            <input type="number" name="invoice_value" class="vIntegerField" required="" id="id_invoice_value">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div>
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_tax_rate">Tax rate:</label>
+                        
+                            <input type="number" name="tax_rate" class="vIntegerField" required="" id="id_tax_rate">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div>
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_taxable_value">Taxable value:</label>
+                        
+                            <input type="number" name="taxable_value" class="vIntegerField" required="" id="id_taxable_value">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div >
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_cgst">Cgst:</label>
+                        
+                            <input type="number" name="cgst" class="vIntegerField" required="" id="id_cgst">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div>
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_sgst">Sgst:</label>
+                        
+                            <input type="number" name="sgst" class="vIntegerField" required="" id="id_sgst">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-igst">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_igst">Igst:</label>
+                        
+                            <input type="number" name="igst" class="vIntegerField" required="" id="id_igst">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-cess">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_cess">Cess:</label>
+                        
+                            <input type="number" name="cess" class="vIntegerField" required="" id="id_cess">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+    <button type="submit" value="R1a">save</button>
+
+
+<input type="submit" value="Save and add another" name="_addanother">
+<input type="submit" value="Save and continue editing" name="_continue">
+
+
+</div>
+
+
+</div>
+</form></div>
+</html>
