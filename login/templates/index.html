@@ -2,25 +2,64 @@
     <head>{% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<style>
+        p {
+            color: red;
+            
+            text-align: left;
+        } 
+        </style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     </head>
 <body>
 <!--hello world
 {% for a in animals%}
 <li>{{a.name}}</li>
 {%endfor%}-->
-   
-
-    <form method="POST"> {% csrf_token %}
-<p id="b"><label for="id_gstin">Gstin:</label> <input type="text" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
-<p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="20" required="" id="id_name"></p>
-<p><label for="id_phn">Phn:</label> <input type="text" name="phn" maxlength="11" required="" id="id_phn"></p>
-<p><label for="id_usr">Usr:</label> <input type="text" name="usr" maxlength="10" required="" id="id_usr"></p>
-<p><label for="id_passwd">Passwd:</label> <input type="text" name="passwd" maxlength="15" required="" id="id_passwd"></p>
-<p><label for="id_mail">Mail:</label> <input type="text" name="mail" maxlength="15" required="" id="id_mail"></p>
-<p><label for="id_pan">Pan:</label> <input type="text" name="pan" maxlength="15" required="" id="id_pan"></p>
-<button type="submit" value="Client" href="#">Submit</button>
-</form>
+<strong>
+<div class="card" style="width:50%">
+<h4 style="text-align: center;"><u>CLIENT DETAILS</u></h4>   
+<form method="POST"> {% csrf_token %}
+    <div class="form-group">
+        <p id="b"><label for="id_gstin">GSTIN:</label> <input type="text" class="form-control" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_name">NAME:</label> <input type="text" class="form-control" name="name" maxlength="20" required="" id="id_name"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_phn">PHONE NUMBER:</label> <input type="text" class="form-control" name="phn" maxlength="11" required="" id="id_phn"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_usr">USER NAME:</label> <input type="text" class="form-control" name="usr" maxlength="10" required="" id="id_usr"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_passwd">PASSWORD:</label> <input type="text" class="form-control" name="passwd" maxlength="15" required="" id="id_passwd"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_mail">MAIL ID:</label> <input type="text" class="form-control" name="mail" maxlength="15" required="" id="id_mail"></p>
+    </div>
+    <div class="form-group">
+        <p><label for="id_pan">PAN NUMBER:</label> <input type="text" class="form-control" name="pan" maxlength="15" required="" id="id_pan"></p>
+    </div>
     
-
+    <div class="form-group">
+        <p><label for="id_provisional_id">PROVISIONAL ID:</label> <input type="text" name="provisional_id" class="form-control"  maxlength="15" required="" id="id_provisional_id"></p>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success" type="submit" style="margin-left:auto;margin-right:auto;display:block;" value="Client" href="#">Submit</button>
+    </div>
+</form>
+</div>    
+</strong>
 </body>
 </html>

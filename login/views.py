@@ -30,6 +30,7 @@ def index(request):
         data.passwd = request.POST.get('passwd')
         data.mail = request.POST.get('mail')
         data.pan = request.POST.get('pan')
+        data.provisional_id = request.POST.get('provisional_id')
         data.save()
         return redirect('login:R1a', gstin=str(data.gstin))
     if request.method == "GET":
