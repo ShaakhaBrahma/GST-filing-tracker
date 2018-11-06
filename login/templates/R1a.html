@@ -30,9 +30,24 @@
                 <div>
                     
                     
-                        <label class="required" for="id_month">Month:</label>
+                       <!-- <label class="required" for="id_month">Month:</label>
                         
-                            <input type="text" name="month" class="vTextField" maxlength="8" required="" id="id_month">
+                            <input type="text" name="month" class="vTextField" maxlength="8" required="" id="id_month">-->
+                    <label class="required">month</label> <select name="month" required="" id="id_month">
+    <option value="april">april</option>
+    <option value="may">may</option>
+    <option value="june">june</option>
+     <option value="july">july</option>
+     <option value="august">august</option>
+     <option value="september">september</option>
+     <option value="october">october</option>
+     <option value="november">november</option>
+     <option value="december">december</option>
+     <option value="january">january</option>
+     <option value="february">february</option>
+    <option value="march">march</option>
+
+</select>
                         
                     
                     
@@ -163,5 +178,6 @@
 
     </div>
 </form></div>
+    <a href="{% url 'login:index' %}">back</a>
     </body>
 </html>
