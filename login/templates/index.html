@@ -1,4 +1,8 @@
 <html>
+    <head>{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
 <body>
 <!--hello world
 {% for a in animals%}
@@ -7,7 +11,7 @@
    
 
     <form method="POST"> {% csrf_token %}
-<p><label for="id_gstin">Gstin:</label> <input type="text" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
+<p id="b"><label for="id_gstin">Gstin:</label> <input type="text" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
 <p><label for="id_name">Name:</label> <input type="text" name="name" maxlength="20" required="" id="id_name"></p>
 <p><label for="id_phn">Phn:</label> <input type="text" name="phn" maxlength="11" required="" id="id_phn"></p>
 <p><label for="id_usr">Usr:</label> <input type="text" name="usr" maxlength="10" required="" id="id_usr"></p>
