@@ -1,5 +1,9 @@
 <html>
     <head>
+        <style>
+            .log{
+                margin-left: 90%;
+            }</style>
         <style>/*
     DJANGO Admin styles
 */
@@ -1538,15 +1542,19 @@ form .related-widget-wrapper ul {
     margin-top: 0;
 }
 </style>
+         <center><h1><strong>3B form</strong></h1></center>
     </head>
 <body>
-    <div id="content-main">
+    <div >
+    <a href="{% url 'login:homepage' %}"  class="log"><strong>logout</strong></a>
+    </div>
+        <div id="content-main">
 
 
 
 <form action="" method="post" id="b3a_form" novalidate="">{% csrf_token %}
 <div>
-
+    
 
 
 
@@ -1679,8 +1687,9 @@ form .related-widget-wrapper ul {
 <div class="submit-row">
 
 <input type="submit" value="Save" class="default" name="_save">
-    <a href="{% url 'login:status' %}">
+    
 
 
     </div></div> </form>
+        <a href="/admin/login/client/"><strong>Filed clients</strong></a>
     </body></html>

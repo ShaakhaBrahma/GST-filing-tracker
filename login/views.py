@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from .models import Client, R1a, R2a,B3a
 from django.template import RequestContext
+from django.db import connection, transaction
 #from .forms import ClientEntry
 
 # Create your views here.
@@ -26,6 +27,7 @@ def index(request):
     if request.method == "POST":
         request_context = RequestContext(request)
         data = Client()
+        data.name = request.POST.get('name')
         data.gstin = request.POST.get('gstin')
         data.phn = request.POST.get('phn')
         data.usr = request.POST.get('usr')
@@ -93,6 +95,7 @@ def B3a(request):
 
 def status(request):
     if request.method == "GET":
-        return render(request, 'status.html')
+        allclients = Client.objects.raw('SELECT * from Client')
+        return render(request, 'status.html', context={'allclients:gstin'})
 
 

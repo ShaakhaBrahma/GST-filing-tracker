@@ -7,7 +7,7 @@ class ClientEntry(ModelForm):
 	class Meta:
 		model=Client
 		fields='__all__'
-		allgstin = forms.ModelChoiceField(queryset=Client.objects.all())
+		allgstin = forms.ModelChoiceField(queryset=Client.objects.raw('SELECT * from Client'))
 
 		
 

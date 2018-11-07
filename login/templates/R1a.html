@@ -2,6 +2,7 @@
 <html lang="en-us" class="gr__127_0_0_1">
     <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">{% load static %}
 <title>Add r1a</title>
+        <center><h1><strong>R1 form</strong></h1></center>
 <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'forms.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'fonts.css' %}">
@@ -95,7 +96,7 @@
                     
                         <label class="required" for="id_sgst">Sgst:</label>
                         
-                            <input type="number" name="sgst" class="vIntegerField" required="" id="id_sgst">
+                            <input type="number" name="sgst" class="vIntegerField" id="id_sgst">
                         
                     
                     
@@ -167,8 +168,9 @@
 
 <div class="submit-row">
 
-<input type="submit" value="Save" class="default" name="_save">
+<input type="submit" value="Save" class="" name="_save"><br><br>
 
+    <a href="{% url 'login:R2afill' %}"><b><strong>take to R2</strong></b></a>
 
 <!--<input type="submit" value="Save and add another" name="_addanother">
 <input type="submit" value="Save and continue editing" name="_continue">-->
@@ -179,6 +181,5 @@
     </div>
 </form></div>
     <a href="{% url 'login:index' %}">back</a>
-    <a href="{% url 'login:R2afill' %}">R2</a>
     </body>
 </html>
