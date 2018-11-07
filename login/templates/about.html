@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html><head>{% load static %}
 <style>
-body {background-color: black;}
+body {background-color: grey;}
 h1   {color: black; font-size: 60px;}
 h2   {color: white; font-size: 25px;}
 p    {color: white; font-size: 20px;}
@@ -10,18 +10,18 @@ ul   {color: white; font-size: 23px;}
 </head>
 <body>
 
-<h1 align="center" style="background-color:DodgerBlue;">WHAT IS GST</h1>
+<h1 align="center" style="background-color:transparent;">WHAT IS GST ?</h1>
 <p>GST is an Indirect Tax which has replaced many Indirect Taxes in India. The Goods and Service Tax Act was passed in the Parliament on 29th March 2017. The Act came into effect on 1st July 2017; Goods & Services Tax Law in India is a comprehensive, multi-stage, destination-based tax that is levied on every value addition.
 
 In simple words, Goods and Service Tax (GST) is an indirect tax levied on the supply of goods and services. This law has replaced many indirect tax laws that previously existed in India.</p>
 
-<center><img src="\hist.png"></center>
+<center><img src="{% static "hist.png" %}"></center>
 
 <h2>Advantages of GST </h2>
 <p>GST will mainly remove the Cascading effect on the sale of goods and services. Removal of cascading effect will directly impact the cost of goods. Since tax on tax is eliminated in this regime, the cost of goods decreases.
 
 GST is also mainly technologically driven. All activities like registration, return filing, application for refund and response to notice needs to be done online on the GST Portal. This will speed up the processes.</p>
-<center><img src="C:\Users\gaura_000\Desktop\pics\ada.png"></center>
+<center><img src="{% static "ada.png" %}"></center>
 
 <h2>What are the components of GST</h2>
 <p>There are 3 taxes applicable under this system: CGST, SGST & IGST.</p>
