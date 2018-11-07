@@ -10,9 +10,11 @@ def homepage(request):
         return render(request, "homepage.html")
     if request.method == "POST":
         return render(request, 'homepage.html')
+
 def about(request):
     if request.method=="GET":
         return render(request, "about.html")
+
 def login1(request):
     if request.method=="GET":
         return render(request, "login1.html")
@@ -35,6 +37,7 @@ def index(request):
         return redirect('login:R1a', gstin=str(data.gstin))
     if request.method == "GET":
         return render(request, 'index.html')
+
 def R1afill(request, gstin):
     if request.method=="POST":
             data = R1a()
@@ -53,34 +56,43 @@ def R1afill(request, gstin):
             return render(request, 'R1a.html')
     if request.method == "GET":
         return render(request, 'R1a.html', context={'allgstin': gstin})
+
 def choice(request,gstin):
-    if request.method=="GET":
+    if request.method == "GET":
         return render(request, 'choice.html', context={'allgstin': gstin})
-    if request.method=="POST":
+
+    if request.method == "POST":
         return render(request, 'choice.html', context={'allgstin': gstin})
 
 def R2afill(request):
     if request.method == "POST":
         r2a = R2a()
         r2 = Client()
+        gstcode = Client.objects.all()
         r2.gstin = request.POST.get('gstin')
         r2a.gstin = r2
         r2a.igst = request.POST.get('igst')
         r2a.sgst = request.POST.get('sgst')
         r2a.cgst = request.POST.get('cgst')
         r2a.month = request.POST.get('month')
+        r2a.cess = request.POST.get('cess')
         r2a.taxable_value=request.POST.get('taxable_value')
-        r2a.total = request.POST.get('rR1')
+        r2a.total = request.POST.get('total')
         r2.save()
         r2a.save()
 
         return render(request, 'R2a.html')
     if request.method == "GET":
         return render(request, 'R2a.html')
+
 def B3a(request):
     if request.method=="POST":
         return render(request, 'B3a.html')
     if request.method == "GET":
         return render(request, 'B3a.html')
+
+def status(request):
+    if request.method == "GET":
+        return render(request, 'status.html')
 
 
