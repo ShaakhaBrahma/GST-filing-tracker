@@ -1,19 +1,13 @@
-
-<html lang="en-us" class="gr__127_0_0_1">
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add r1a</title>{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'forms.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'fonts.css' %}">
-   <link rel="stylesheet" type="text/css" href="{% static 'widgets.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'responsive.css' %}"> 
+<html>
+<head>
+    
     </head>
-<body>
+    <body>
     <div id="content-main">
 
 
 
-<form action="" method="POST" id="r1a_form">{% csrf_token %}
+<form action="" method="POST" id="r2a_form" novalidate="">{% csrf_token %}
 <div>
 
 
@@ -23,17 +17,8 @@
 
 
   <fieldset class="module aligned ">
-    
-        <div class="form-row field-month">
-            
-            
-                <div>
-                    
-                    
-                       <!-- <label class="required" for="id_month">Month:</label>
-                        
-                            <input type="text" name="month" class="vTextField" maxlength="8" required="" id="id_month">-->
-                    <label class="required">month</label> <select name="month" required="" id="id_month">
+     <div class="form-row field-month">
+ <label class="required">month</label> <select name="month" required="" id="id_month">
     <option value="april">april</option>
     <option value="may">may</option>
     <option value="june">june</option>
@@ -45,9 +30,9 @@
      <option value="december">december</option>
      <option value="january">january</option>
      <option value="february">february</option>
-    <option value="march">march</option>
-
-</select>
+         <option value="march">march</option></select></div>
+    
+</div>
                         
                     
                     
@@ -64,6 +49,38 @@
                         <label class="required" for="id_taxable_value">Taxable value:</label>
                         
                             <input type="number" name="taxable_value" class="vIntegerField" required="" id="id_taxable_value">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-total">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_total">Total:</label>
+                        
+                            <input type="number" name="total" class="vIntegerField" required="" id="id_total">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-igst">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_igst">Igst:</label>
+                        
+                            <input type="number" name="igst" class="vIntegerField" required="" id="id_igst">
                         
                     
                     
@@ -103,22 +120,6 @@
             
         </div>
     
-        <div class="form-row field-igst">
-            
-            
-                <div>
-                    
-                    
-                        <label class="required" for="id_igst">Igst:</label>
-                        
-                            <input type="number" name="igst" class="vIntegerField" required="" id="id_igst">
-                        
-                    
-                    
-                </div>
-            
-        </div>
-    
         <div class="form-row field-cess">
             
             
@@ -135,50 +136,25 @@
             
         </div>
     
-        <div class="form-row field-total">
+       
             
             
-                <div>
-                    
-                    
-                        <label class="required" for="id_total">Total:</label>
-                        
-                            <input type="number" name="total" class="vIntegerField" required="" id="id_total">
-                        
-                    
-                    
-                </div>
-            
-        </div>
+    
     
 </fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="submit-row">
 
 <input type="submit" value="Save" class="default" name="_save">
 
 
-<!--<input type="submit" value="Save and add another" name="_addanother">
-<input type="submit" value="Save and continue editing" name="_continue">-->
+
+
+
+    </div>
 
 
 </div>
-
-    </div>
 </form></div>
-    <a href="{% url 'login:index' %}">back</a>
-    <a href="{% url 'login:R2afill' %}">R2</a>
+       <a href="{% url 'login:B3a' %}">3B</a>
     </body>
 </html>

@@ -3,7 +3,7 @@
 <title>Login Page</title>
 </head>
 <body>
-<form name="loginForm" method="POST" action="{% 'login:index' %}">{% csrf_token %}
+<form name="loginForm" method="POST" action="{% url 'login:index' %}">{% csrf_token %}
 <table height="50%" width="50%" bgcolor="#2F4F4F" align="center">
 
 <tr>

@@ -20,9 +20,12 @@ app_name='login'
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('homepage/', views.homepage, name='homepage'),
-    path('about/', views.about,name='about'),
-    path('login1/', views.login1,name='login1'),
-    path('R1afill/<slug:gstin>', views.R1afill, name='R1a'),
+    path('about/', views.about, name='about'),
+    path('login1/', views.login1, name='login1'),
+    path('R1afill/<slug:gstin>/', views.R1afill, name='R1a'),
+    path('choice/<slug:gstin>/', views.choice, name='choice'),
+    path('R2afill/', views.R2afill, name='R2afill'),
+    path('B3a/', views.B3a, name='B3a'),
 
 
 ]

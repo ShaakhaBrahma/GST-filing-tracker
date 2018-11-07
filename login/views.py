@@ -1,6 +1,6 @@
 
-from django.shortcuts import render,redirect
-from .models import Client, R1a
+from django.shortcuts import render, redirect
+from .models import Client, R1a, R2a,B3a
 from django.template import RequestContext
 #from .forms import ClientEntry
 
@@ -21,7 +21,7 @@ def login1(request):
 
 
 def index(request):
-    if request.method=="POST":
+    if request.method == "POST":
         request_context = RequestContext(request)
         data = Client()
         data.gstin = request.POST.get('gstin')
@@ -53,8 +53,34 @@ def R1afill(request, gstin):
             return render(request, 'R1a.html')
     if request.method == "GET":
         return render(request, 'R1a.html', context={'allgstin': gstin})
+def choice(request,gstin):
+    if request.method=="GET":
+        return render(request, 'choice.html', context={'allgstin': gstin})
+    if request.method=="POST":
+        return render(request, 'choice.html', context={'allgstin': gstin})
 
+def R2afill(request):
+    if request.method == "POST":
+        r2a = R2a()
+        r2 = Client()
+        r2.gstin = request.POST.get('gstin')
+        r2a.gstin = r2
+        r2a.igst = request.POST.get('igst')
+        r2a.sgst = request.POST.get('sgst')
+        r2a.cgst = request.POST.get('cgst')
+        r2a.month = request.POST.get('month')
+        r2a.taxable_value=request.POST.get('taxable_value')
+        r2a.total = request.POST.get('rR1')
+        r2.save()
+        r2a.save()
 
-
+        return render(request, 'R2a.html')
+    if request.method == "GET":
+        return render(request, 'R2a.html')
+def B3a(request):
+    if request.method=="POST":
+        return render(request, 'B3a.html')
+    if request.method == "GET":
+        return render(request, 'B3a.html')
 
 

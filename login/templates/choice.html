@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: blue;
+}
+</style>
+</head>
+<body>
+<br><br>
+    {{allgstin}}
+<p> To fill GST-R1 please click on the button below</p>
+    <a href="{% url 'login:R1a'<allgstin> %}"><button class="button" type="button" >GST-R1 filling</button></a><br><br>
+
+<p> To fill GST-R2 please click on the button below</p>
+<button class="button" onclick="location.href='R2a.html'" type="button" >GST-R2 filling</button><br><br>
+
+<p> To fill GST-3B please click on the button below</p>
+<button class="button" onclick="location.href='3b.html'" type="button" >GST-R3 filling</button><br><br>
+
+
+
+</body>
+</html>

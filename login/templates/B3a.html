@@ -1,0 +1,135 @@
+<html>
+    <head>
+    </head>
+<body>
+    <div id="content-main">
+
+
+
+<form action="" method="post" id="b3a_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="OtkRpxv1hI74kOVToRKfGt2JjRgPMBbhqr55MdefgAL23LBwo45ovGdCaoKTVsH5">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-gstin">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_gstin">Gstin:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="gstin" required="" id="id_gstin">
+  <option value="" selected="">---------</option>
+
+  <option value="{{ Client.gstin }}">{{ Client.gstin }}</option>
+
+  
+
+</select>
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-month">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_month">Month:</label>
+                        
+                            <input type="text" name="month" class="vTextField" maxlength="20" required="" id="id_month">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-ty">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_ty">Ty:</label>
+                        
+                            <input type="text" name="ty" class="vTextField" maxlength="3" required="" id="id_ty" autocomplete="off">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-taxable_value">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_taxable_value">Taxable value:</label>
+                        
+                            <input type="number" name="taxable_value" class="vIntegerField" required="" id="id_taxable_value">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-total">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_total">Total:</label>
+                        
+                            <input type="number" name="total" class="vIntegerField" required="" id="id_total">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-igst">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_igst">Igst:</label>
+                        
+                            <input type="number" name="igst" class="vIntegerField" required="" id="id_igst">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+<div class="submit-row">
+
+<input type="submit" value="Save" class="default" name="_save">
+
+
+</div>
+</form></div>
+    </body></html>
