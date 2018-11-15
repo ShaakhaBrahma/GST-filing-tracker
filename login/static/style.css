@@ -7,3 +7,14 @@ body {
     color: #333;
     background: #fff;
 }
+.navbar-goggles {
+    background-color:#682060;
+    width:100%;
+    height:60px;
+    border:0;
+    color:#b9d6c3;
+    font-family:'Open Sans',sans-serif;
+    font-size:1em;
+    font-weight:lighter;
+    font-weight:300
+}

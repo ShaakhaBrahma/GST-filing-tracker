@@ -19,15 +19,23 @@
 </head>
 <body>
 <br><br>
-    {{allgstin}}
+    
+    {{ allgstin }}
+    <ul>
+        {% for pin in allgstin %}
+            <li>{{ pin }}</li>
+        {% endfor %}
+    </ul>
 <p> To fill GST-R1 please click on the button below</p>
-    <a href="{% url 'login:R1a'<allgstin> %}"><button class="button" type="button" >GST-R1 filling</button></a><br><br>
+    <a href="{% url 'login:R1afill' allgstin %}"><button class="button" type="button" >GST-R1 filling</button></a><br><br>
 
 <p> To fill GST-R2 please click on the button below</p>
-<button class="button" onclick="location.href='R2a.html'" type="button" >GST-R2 filling</button><br><br>
+<!--<button class="button" onclick="location.href='R2a.html'" type="button" >GST-R2 filling</button><br><br>-->
+     <a href="{% url 'login:R2afill' allgstin %}"><button class="button" type="button" >GST-R2 filling</button></a><br><br>
 
 <p> To fill GST-3B please click on the button below</p>
-<button class="button" onclick="location.href='3b.html'" type="button" >GST-R3 filling</button><br><br>
+<!--<button class="button" onclick="location.href='3b.html'" type="button" >GST-R3 filling</button><br><br>-->
+     <a href="{% url 'login:B3a' allgstin %}"><button class="button" type="button" >GST-R3 filling</button></a><br><br>
 
 
 

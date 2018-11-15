@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from .models import Client, R1a, R2a,B3a
 from django.template import RequestContext
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.db import connection, transaction
 #from .forms import ClientEntry
 
@@ -13,14 +15,14 @@ def homepage(request):
         return render(request, 'homepage.html')
 
 def about(request):
-    if request.method=="GET":
+    if request.method == "GET":
         return render(request, "about.html")
 
 def login1(request):
-    if request.method=="GET":
+    if request.method == "GET":
         return render(request, "login1.html")
     if request.method == "POST":
-        return redirect('login:index')
+        return render(request, "index.html")
 
 
 def index(request):
@@ -36,12 +38,13 @@ def index(request):
         data.pan = request.POST.get('pan')
         data.provisional_id = request.POST.get('provisional_id')
         data.save()
-        return redirect('login:R1a', gstin=str(data.gstin))
+
+        return redirect('login:choice', gstin=str(data.gstin))
     if request.method == "GET":
         return render(request, 'index.html')
 
 def R1afill(request, gstin):
-    if request.method=="POST":
+    if request.method == "POST":
             data = R1a()
             client = Client()
             client.gstin = gstin
@@ -57,21 +60,23 @@ def R1afill(request, gstin):
             client.save()
             return render(request, 'R1a.html')
     if request.method == "GET":
+        #return HttpResponseRedirect(reverse('login:R1afill', args=(gstin)))
         return render(request, 'R1a.html', context={'allgstin': gstin})
 
-def choice(request,gstin):
+def choice(request, gstin):
     if request.method == "GET":
         return render(request, 'choice.html', context={'allgstin': gstin})
 
     if request.method == "POST":
         return render(request, 'choice.html', context={'allgstin': gstin})
 
-def R2afill(request):
+def R2afill(request, gstin):
     if request.method == "POST":
         r2a = R2a()
         r2 = Client()
         gstcode = Client.objects.all()
-        r2.gstin = request.POST.get('gstin')
+        # r2.gstin = request.POST.get('gstin')
+        r2.gstin = gstin
         r2a.gstin = r2
         r2a.igst = request.POST.get('igst')
         r2a.sgst = request.POST.get('sgst')
@@ -83,15 +88,15 @@ def R2afill(request):
         r2.save()
         r2a.save()
 
-        return render(request, 'R2a.html')
+        return render(request, 'R2a.html', context={'allgstin': gstin})
     if request.method == "GET":
-        return render(request, 'R2a.html')
+        return render(request, 'R2a.html', context={'allgstin': gstin})
 
-def B3a(request):
+def B3a(request, gstin):
     if request.method=="POST":
         return render(request, 'B3a.html')
     if request.method == "GET":
-        return render(request, 'B3a.html')
+        return render(request, 'B3a.html', context={'allgstin': gstin})
 
 def status(request):
     if request.method == "GET":

@@ -22,10 +22,10 @@ urlpatterns = [
     path('homepage/', views.homepage, name='homepage'),
     path('about/', views.about, name='about'),
     path('login1/', views.login1, name='login1'),
-    path('R1afill/<slug:gstin>/', views.R1afill, name='R1a'),
+    path('R1afill/<slug:gstin>/', views.R1afill, name='R1afill'),
     path('choice/<slug:gstin>/', views.choice, name='choice'),
-    path('R2afill/', views.R2afill, name='R2afill'),
-    path('B3a/', views.B3a, name='B3a'),
+    path('R2afill/<slug:gstin>', views.R2afill, name='R2afill'),
+    path('B3a/<slug:gstin>', views.B3a, name='B3a'),
     path('status/', views.status, name='status')
 
 
