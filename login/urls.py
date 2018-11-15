@@ -25,7 +25,7 @@ urlpatterns = [
     path('R1afill/<slug:gstin>/', views.R1afill, name='R1afill'),
     path('choice/<slug:gstin>/', views.choice, name='choice'),
     path('R2afill/<slug:gstin>', views.R2afill, name='R2afill'),
-    path('B3a/<slug:gstin>', views.B3a, name='B3a'),
+    path('B3afill/<slug:gstin>', views.B3afill, name='B3afill'),
     path('status/', views.status, name='status')
 
 

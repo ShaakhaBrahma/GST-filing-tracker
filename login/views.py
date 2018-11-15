@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-from .models import Client, R1a, R2a,B3a
+from .models import Client, R1a, R2a, B3a
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -58,10 +58,10 @@ def R1afill(request, gstin):
             data.total = request.POST.get('total')
             data.save()
             client.save()
-            return render(request, 'R1a.html')
+            return render(request, 'R1afill.html', context={'allgstin': gstin})
     if request.method == "GET":
         #return HttpResponseRedirect(reverse('login:R1afill', args=(gstin)))
-        return render(request, 'R1a.html', context={'allgstin': gstin})
+        return render(request, 'R1afill.html', context={'allgstin': gstin})
 
 def choice(request, gstin):
     if request.method == "GET":
@@ -88,15 +88,27 @@ def R2afill(request, gstin):
         r2.save()
         r2a.save()
 
-        return render(request, 'R2a.html', context={'allgstin': gstin})
+        return render(request, 'R2afill.html', context={'allgstin': gstin})
     if request.method == "GET":
-        return render(request, 'R2a.html', context={'allgstin': gstin})
+        return render(request, 'R2afill.html', context={'allgstin': gstin})
 
-def B3a(request, gstin):
-    if request.method=="POST":
-        return render(request, 'B3a.html')
+def B3afill(request, gstin):
+    if request.method == "POST":
+        r3 = Client()
+        b3a = B3a()
+        r3.gstin = gstin
+        b3a.gstin = r3
+        b3a.ty = request.POST.get('ty')
+        b3a.month = request.POST.get('month')
+        b3a.taxable_value = request.POST.get('taxable_value')
+        b3a.total = request.POST.get('total')
+        b3a.igst = request.POST.get('igst')
+        r3.save()
+        b3a.save()
+
+        return render(request, 'B3afill.html', context={'allgstin': gstin})
     if request.method == "GET":
-        return render(request, 'B3a.html', context={'allgstin': gstin})
+        return render(request, 'B3afill.html', context={'allgstin': gstin})
 
 def status(request):
     if request.method == "GET":

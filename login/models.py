@@ -69,7 +69,7 @@ class B3a(models.Model):
     ty = models.CharField(max_length=3)
     taxable_value = models.IntegerField()
     total = models.IntegerField()
-    igst =  models.IntegerField()
+    igst = models.IntegerField()
 
 
 

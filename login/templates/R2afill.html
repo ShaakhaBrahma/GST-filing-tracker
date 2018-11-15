@@ -570,10 +570,6 @@ form .related-widget-wrapper ul {
      <option value="february">february</option>
          <option value="march">march</option></select></div>
       <div>
-      <div ><div class="form-row field-gstin">
-          <label class="required" id="">gstin</label>
-   <!-- <select name="gstin" required="" id="id_gstin">-->
-        <input type="text" class="form-control" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off"></p>
         
   <!--<option value="" selected="">---------</option>
    <% for choice in gstcode %>
@@ -688,7 +684,7 @@ form .related-widget-wrapper ul {
 <div class="submit-row">
 
     <input type="submit" value="Save" class="" name="_save">
-    <a href="{% url 'login:B3a' allgstin %}"><strong>take to 3B</strong></a>
+    <a href="{% url 'login:B3afill' allgstin %}"><strong>take to 3B</strong></a>
 
 
     </div></div>
