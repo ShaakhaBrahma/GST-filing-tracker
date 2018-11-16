@@ -52,6 +52,7 @@ def R1afill(request, gstin):
             data.igst = request.POST.get('igst')
             data.cess = request.POST.get('cess')
             data.month = request.POST.get('month')
+            data.sgst = request.POST.get('sgst')
             data.taxable_value = request.POST.get('taxable_value')
             data.cgst = request.POST.get('cgst')
             data.igst=request.POST.get('igst')
