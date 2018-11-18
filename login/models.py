@@ -10,7 +10,7 @@ from django.db import models
 #	age=models.IntegerField()
 # spouse=models.ForeignKeyField(animal)
 class Client(models.Model):
-    gstin = models.CharField(max_length=15, primary_key=True)
+    gstin = models.CharField(max_length=15, primary_key=True, unique=True)
     name = models.CharField(max_length=20)
     phn = models.CharField(max_length=11)
     usr = models.CharField(max_length=10)

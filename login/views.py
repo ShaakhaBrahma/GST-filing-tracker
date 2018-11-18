@@ -43,6 +43,13 @@ def index(request):
     if request.method == "GET":
         return render(request, 'index.html')
 
+def clogin(request):
+    if request.method =="POST":
+        gstinl = request.POST.get('gstinl')
+        return redirect('login:choice', gstin=str(gstinl))
+    if request.method == "GET":
+        return render(request, 'index.html')
+
 def R1afill(request, gstin):
     if request.method == "POST":
             data = R1a()

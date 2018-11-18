@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-app_name='login'
+app_name = 'login'
 urlpatterns = [
     path('index/', views.index, name='index'),
     path('homepage/', views.homepage, name='homepage'),
@@ -26,7 +26,8 @@ urlpatterns = [
     path('choice/<slug:gstin>/', views.choice, name='choice'),
     path('R2afill/<slug:gstin>', views.R2afill, name='R2afill'),
     path('B3afill/<slug:gstin>', views.B3afill, name='B3afill'),
-    path('status/', views.status, name='status')
+    path('clogin/', views.clogin, name='directlogin'),
+    path('status/', views.status, name='status'),
 
 
 ]

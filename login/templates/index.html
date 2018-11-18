@@ -59,6 +59,15 @@
         <button class="btn btn-success" type="submit" style="margin-left:auto;margin-right:auto;display:block;" value="Client" href="">Submit</button>
     </div>
 </form>
+    
+    <form action="{% url 'login:directlogin' %}"  method="post">{% csrf_token %}
+         <div class="form-group">
+        <p id="a"><label for="gstinl">GSTIN:</label> <input type="text" class="form-control" name="gstinl" maxlength="15" required="True" id="gstinl" autocomplete="off" placeholder="1234abc12345on1"></p>
+    </div>
+        <div class="form-group">
+        <button class="btn btn-success" type="submit" >Submit</button>
+    </div>
+    </form>
 </div>    
 </strong>
 </body>
