@@ -2,6 +2,8 @@
 from django.shortcuts import render, redirect
 from .models import Client, R1a, R2a, B3a
 from django.template import RequestContext
+from django.forms import ModelForm, forms
+from django.db.models import signals
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.db import connection, transaction
@@ -42,6 +44,14 @@ def index(request):
         return redirect('login:choice', gstin=str(data.gstin))
     if request.method == "GET":
         return render(request, 'index.html')
+
+    def clean_username(self, gstin):
+        user_model = get_user_model()  # your way of getting the User
+        try:
+            user_model.objects.get(username__iexact=gstin)
+        except user_model.DoesNotExist:
+            return gstin
+        raise forms.ValidationError(_("This username has already existed."))
 
 def clogin(request):
     if request.method =="POST":
@@ -119,8 +129,15 @@ def B3afill(request, gstin):
         return render(request, 'B3afill.html', context={'allgstin': gstin})
 
 def status(request):
+    if request.method == "POST":
+        gst = request.POST.get('gstin')
+        allclients = Client.objects.raw('select * from login_client')
+        r1a = R1a.objects.filter(gstin=gst)
+        r2a = R2a.objects.filter(gstin=gst)
+        b3a = B3a.objects.filter(gstin=gst)
+        return render(request, 'status.html', context={'allclients': allclients, 'r1a': r1a, 'r2a':r2a, 'b3a':b3a})
     if request.method == "GET":
-        allclients = Client.objects.raw('SELECT * from Client')
-        return render(request, 'status.html', context={'allclients:gstin'})
+        allclients = Client.objects.raw('select * from login_client')
+        return render(request, 'status.html', context={'allclients': allclients})
 
 

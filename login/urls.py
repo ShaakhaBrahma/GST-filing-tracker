@@ -19,7 +19,7 @@ from . import views
 app_name = 'login'
 urlpatterns = [
     path('index/', views.index, name='index'),
-    path('homepage/', views.homepage, name='homepage'),
+    path('', views.homepage, name='homepage'),
     path('about/', views.about, name='about'),
     path('login1/', views.login1, name='login1'),
     path('R1afill/<slug:gstin>/', views.R1afill, name='R1afill'),

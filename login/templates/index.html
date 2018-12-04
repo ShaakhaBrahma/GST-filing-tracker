@@ -27,8 +27,18 @@
 <li>{{a.name}}</li>
 {%endfor%}-->
 <strong>
+     <form action="{% url 'login:directlogin' %}"  method="post">{% csrf_token %}
+         <div class="form-group"><div class="card" style="width:50%">
+             <h4 style="text-align: center;"><u>Existing Clients login</u></h4> 
+             
+        <p id="a"><label for="gstinl">GSTIN:</label> <input type="text" class="form-control" name="gstinl" maxlength="15" required="True" id="gstinl" autocomplete="off" placeholder="1234abc12345on1"></p>
+             
+        <div class="form-group">
+        <button class="btn btn-success" type="submit" align="right" >Submit</button>
+    </div></div></div>
+    </form>
 <div class="card" style="width:50%">
-<h4 style="text-align: center;"><u>CLIENT DETAILS</u></h4>   
+<h4 style="text-align: center;"><u>New Client Registration</u></h4>   
 <form method="POST"> {% csrf_token %}
     <div class="form-group">
         <p id="b"><label for="id_gstin">GSTIN:</label> <input type="text" class="form-control" name="gstin" maxlength="15" required="True" id="id_gstin" autocomplete="off" placeholder="1234abc12345on1"></p>
@@ -56,18 +66,11 @@
         <p><label for="id_provisional_id">PROVISIONAL ID:</label> <input type="text" name="provisional_id" class="form-control"  maxlength="15" required="" id="id_provisional_id"></p>
     </div>
     <div class="form-group">
-        <button class="btn btn-success" type="submit" style="margin-left:auto;margin-right:auto;display:block;" value="Client" href="">Submit</button>
+        <button class="btn btn-success" type="submit" style="margin-left:auto;margin-right:auto;display:block;" value="Client" align="center" href="">Submit</button>
     </div>
 </form>
     
-    <form action="{% url 'login:directlogin' %}"  method="post">{% csrf_token %}
-         <div class="form-group">
-        <p id="a"><label for="gstinl">GSTIN:</label> <input type="text" class="form-control" name="gstinl" maxlength="15" required="True" id="gstinl" autocomplete="off" placeholder="1234abc12345on1"></p>
-    </div>
-        <div class="form-group">
-        <button class="btn btn-success" type="submit" >Submit</button>
-    </div>
-    </form>
+   
 </div>    
 </strong>
 </body>

@@ -1,7 +1,4 @@
 from django.db import models
-
-
-
 # from phone_field import PhoneField
 
 # Create your models here.
@@ -18,7 +15,6 @@ class Client(models.Model):
     mail = models.CharField(max_length=15)
     pan = models.CharField(max_length=15)
     provisional_id = models.CharField(max_length=15)
-
 
 class R1a(models.Model):
     gstin = models.ForeignKey(Client, on_delete=models.CASCADE)

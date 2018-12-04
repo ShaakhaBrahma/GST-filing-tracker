@@ -1,11 +1,75 @@
 <html>
-    <head>
+    <head>{% load static %}
+        <style> 
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image:{% static "search.png" %};
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+            ul.test
+{
+padding: 0;
+margin: 0;
+text-align: left;
+    padding-left:1200px;
+}
+
+li
+{
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .6em;
+}
+            color{
+                color: antiquewhite
+            }
+</style>
     </head>
     <title> Status</title>
-    <body>
+    <h1>Trakcing status of clients</h1>
+    <body style="background-color:powderblue;">
+        <form method="post" >{% csrf_token %}
+            <div style="width:50%"><p id="b"><label for="id_gstin" class="color"><b>GSTIN:</b></label> <input type="text" class="form-control" name="gstin" maxlength="15" required="True" id="id_gstin"></p>
+           <div>
+
+    <button type="submit">show</button></div></div> 
+        </form>
+        <div align="right"> <ul class="test"><strong>list of clients</strong>
     {% for field in allclients %}
-{{field.gstin}}
+
+    <li>{{field.gstin}}</li>
 
 {% endfor %}
+           </ul></div>
+        
+       
+         <ul>R1 list
+    {% for field in r1a %}
+
+    <li>{{field.month}}</li>
+
+{% endfor %}
+        </ul>
+        <ul>R2 list
+    {% for field in r2a %}
+
+    <li>{{field.month}}</li>
+
+{% endfor %}
+        </ul>
+        <ul>3B list
+    {% for field in b3a %}
+
+    <li>{{field.month}}</li>
+
+{% endfor %}
+        </ul>
     </body>
 </html>
