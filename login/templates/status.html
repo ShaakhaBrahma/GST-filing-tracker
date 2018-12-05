@@ -30,6 +30,18 @@ padding-right: .6em;
             color{
                 color: antiquewhite
             }
+            .button {
+    background-color: #008CAA; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 </style>
     </head>
     <title> Status</title>
@@ -39,7 +51,7 @@ padding-right: .6em;
             <div style="width:50%"><p id="b"><label for="id_gstin" class="color"><b>GSTIN:</b></label> <input type="text" class="form-control" name="gstin" maxlength="15" required="True" id="id_gstin"></p>
            <div>
 
-    <button type="submit">show</button></div></div> 
+    <button class="button" type="submit">show</button></div></div> 
         </form>
         <div align="right"> <ul class="test"><strong>list of clients</strong>
     {% for field in allclients %}

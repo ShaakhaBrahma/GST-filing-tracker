@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from . import views
 app_name = 'login'
-urlpatterns = [
+urlpatterns = {
     path('index/', views.index, name='index'),
     path('', views.homepage, name='homepage'),
     path('about/', views.about, name='about'),
@@ -29,5 +29,4 @@ urlpatterns = [
     path('clogin/', views.clogin, name='directlogin'),
     path('status/', views.status, name='status'),
 
-
-]
+}

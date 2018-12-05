@@ -92,8 +92,6 @@ def R2afill(request, gstin):
     if request.method == "POST":
         r2a = R2a()
         r2 = Client()
-        gstcode = Client.objects.all()
-        # r2.gstin = request.POST.get('gstin')
         r2.gstin = gstin
         r2a.gstin = r2
         r2a.igst = request.POST.get('igst')
@@ -135,7 +133,7 @@ def status(request):
         r1a = R1a.objects.filter(gstin=gst)
         r2a = R2a.objects.filter(gstin=gst)
         b3a = B3a.objects.filter(gstin=gst)
-        return render(request, 'status.html', context={'allclients': allclients, 'r1a': r1a, 'r2a':r2a, 'b3a':b3a})
+        return render(request, 'status.html', context={'allclients': allclients, 'r1a': r1a, 'r2a': r2a, 'b3a': b3a})
     if request.method == "GET":
         allclients = Client.objects.raw('select * from login_client')
         return render(request, 'status.html', context={'allclients': allclients})
